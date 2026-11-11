@@ -1,0 +1,13 @@
+{
+  "name": "slide-watcher",
+  "version": "1.0.0",
+  "description": "Stake.com Slide round watcher + pattern analyzer",
+  "main": "watcher.js",
+  "scripts": {
+    "start": "node watcher.js",
+    "analyze": "node analyze.js"
+  },
+  "dependencies": {
+    "playwright-core": "^1.49.0"
+  }
+}

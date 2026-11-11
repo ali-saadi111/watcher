@@ -1,0 +1,17 @@
+[Unit]
+Description=Stake Slide round watcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# EDIT User and paths to match your server setup
+WorkingDirectory=/opt/slide-watcher
+ExecStart=/usr/bin/node /opt/slide-watcher/watcher.js
+Environment=HEADLESS=1
+Restart=always
+RestartSec=15
+Nice=10
+
+[Install]
+WantedBy=multi-user.target
