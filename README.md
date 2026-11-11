@@ -48,8 +48,16 @@ xvfb-run -a node watcher.js
 | `watcher.js` | capture process (browser + observer + logger) |
 | `analyze.js` | statistics: distribution, streaks, Markov, gaps, CUSUM drift |
 | `data/rounds.jsonl` | one line per round: `{"ts": "...", "multiplier": 2.86}` |
+| `rounds.jsonl` | seeded history: 1,915 rounds observed Nov 11 2026 (01:50–13:14 UTC) |
 | `data/report.md` | generated pattern report |
 | `data/status.json` | live status (rounds, last round, reloads) |
+
+To start with the seeded history on the server:
+
+```bash
+mkdir -p data && cp rounds.jsonl data/rounds.jsonl
+node analyze.js   # generates the full report from 1,915 rounds immediately
+```
 
 ## Run as a systemd service (auto-restart, survives logout)
 
